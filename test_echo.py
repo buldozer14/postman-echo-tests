@@ -34,7 +34,7 @@ def test_get_query_params_are_echoed(session):
     assert response.status_code == 200
     assert response.headers["Content-Type"].startswith("application/json")
     body = response.json()
-    assert body["args"]["foo"] == "BROKEN"
+    assert body["args"]["foo"] == "bar"
     assert body["args"]["lang"] == "ru"
     assert body["args"]["x"] == ["1", "2"]
     assert body["url"].startswith(GET_URL)
